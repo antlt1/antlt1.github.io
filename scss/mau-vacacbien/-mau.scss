@@ -1,0 +1,16 @@
+$mau-1 : #337ab7;
+$mau-2 : #5cb85c;
+$mau-3 : #4cae4c;
+@mixin btn-mau($mau) {
+    color: $mau;
+}
+@mixin mau-nen($mau) {
+    background-color: $mau;
+}
+@mixin mau-chu($mau) {
+    color: $mau;
+}
+$displaydk : 1140px;
+@mixin col($chieudai) {
+    max-width: $chieudai;
+}
