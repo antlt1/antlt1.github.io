@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html id="web">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- sass tự tạo -->
+    <link rel="stylesheet" href="src/scss/main.css">
+    <!-- css web -->
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Trang Chủ</title>
+</head>
+<header>
+
+</header>
+<body class="body">
+    <div class="nav">
+        <div class="logo block-elemen">
+            <a href="index.html" class="block-elemen"><img src="src/img/icon/logo.jpg" alt=""></a>
+        </div>
+        <div class="show-btn">
+            <img src="src/img/icon/btn-list.png" alt="btn">
+        </div>
+        <div class="list-nav block-elemen">
+            
+            <div class="list-bar block-elemen">
+                <div class="list1">
+                    <a href="index.html">Trang Chủ</a>
+                </div>
+                <div class="list1 tab-loaisach">
+                    <a href="#">Loại Sách▼
+                    </a>   
+                    <div class="menu" style="display:none;">
+                        <div>
+                            <li> <a href="#">Sách Giáo</a> </li>
+                            <li>  <a href="#">Sách Sinh Viên</a></li>
+                            <li><a href="#">Sách Nước Ngoài</a></li>
+                            <li> <a href="#">Sách Trẻ Em</a></li>     
+                        </div>
+                    </div>             
+                </div>
+                <div class="list1">
+                    <a href="#" class="btn-search">Tìm Sách&nbsp;</a>
+                </div>
+                <div class="list1">
+                    <a href="#">Hỗ Trợ&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                </div>
+        </div>
+        <div class="search" style="display: none;">
+            <input type="text" placeholder="Tìm Sách ? "><h1 class="close-search">˟</h1>
+        </div>
+    </div>
+    <div class="showtrang" id="loading" style="display:none;">
+        <div class='loading'>
+            <div class='loading__square'></div>
+            <div class='loading__square'></div>
+            <div class='loading__square'></div>
+            <div class='loading__square'></div>
+            <div class='loading__square'></div>
+            <div class='loading__square'></div>
+            <div class='loading__square'></div>
+          </div>
+          <h3>Đang Tải ...</h3>
+    </div>
+    <!-- srcipt -->
+    <script src="src/js/jquery-3.5.1.min.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
