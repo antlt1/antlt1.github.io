@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* CSS Document */
+/*Tạo 1 số quy định chung cho trang web*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  background-color: #ccc;
+  /*background:url(images/background.gif);*/
+}
+#website {
+  width: 1040px;
+  margin: auto; /*Canh giữa website*/
+  background-color: #fff;
+  /*height:800px;	*/
+}
+/*Khoảng cách giữa các thẻ html trong web bằng 0*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* PHẦN TOP CỦA WEBSITE ================================================*/
+#top {
+  width: 1000px;
+  margin: auto;
+  height: 28px;
+  background-color: #f4f4f4;
+}
+#top_left {
+  float: left; /* Thẻ div id=top_left nằm bên trái */
+  margin: 4px 0 0 20px; /* Thẻ div cách lề trên 4 và trái 20*/
+}
+#top_right {
+  float: right; /* Thẻ div id=top_right nằm bên phải */
+  margin: 5px 20px 0 0px; /* Thẻ div cách lề trên 5 và phải 20*/
+}
+a {
+  text-decoration: none; /*Bỏ gạch dưới của tất cả thẻ a trong website*/
+}
+#top_right ul {
+  list-style-type: none; /*Tạo ds không dấu*/
+}
+#top_right ul li {
+  float: left; /* Các li nằm 1 hàng ngang*/
+  margin-right: 5px; /* Các li cách nhau 5px*/
+  color: #999; /* Đổi màu xám đường gạch | */
+}
+#top_right ul li a {
+  color: #999; /* Đổi màu xám chữ của thẻ a*/
+}
+#top_right ul li a:hover {
+  color: #00f; /* Rê chuột vào thẻ a đổi màu xanh*/
+}
+
+/*PHẦN HEADER CỦA WEBSITE==================================*/
+#header {
+  width: 1000px;
+  margin: auto;
+  height: 130px;
+  /*border:1px solid #000;*/
+}
+#shopcart {
+  float: right;
+  width: 180px;
+  height: 67px;
+  /*border:1px solid #000;*/
+  position: relative; /*div shopcart cố định*/
+}
+#shopcart img {
+  width: 180px;
+  margin-top: 13px;
+}
+#info_cart {
+  position: absolute;
+  z-index: 99; /*div info-cart nằm lên*/
+  top: 0px; /*div info-cart nằm lên cách top shopcart là 0*/
+  margin: 25px 0 0 100px; /*cách lề info-cart với shopcart*/
+  text-align: center;
+  color: #f00; /*canh giữa chữa trong div info-cart*/
+}
+#header_phone {
+  width: 150px;
+  height: 30px;
+  /*border:1px solid #000;*/
+  float: left; /* 2 div header_phone, header_search trên 1 hàng*/
+  margin-top: 28px;
+  background: url(images/call.png) no-repeat; /* tạo hình nền & k cho hình lặp lại*/
+  padding-left: 30px; /* số điện thoại cách lề trái 30px*/
+  font-size: 14px;
+  color: #00f;
+  line-height: 30px; /* Canh giữa chiều cao*/
+}
+#header_search {
+  width: 216px;
+  height: 30px;
+  /*border:1px solid #000;*/
+  float: left; /* 2 div header_phone, header_search trên 1 hàng*/
+  margin-top: 28px;
+  background: #f7f7f7;
+  position: relative; /*cố định để hiệu chỉnh subsearch*/
+}
+#txtsearch {
+  width: 180px;
+  height: 29px;
+  border: 0; /*bỏ viền khung search*/
+  background: #f7f7f7;
+}
+#btnsearch {
+  width: 34px;
+  height: 30px;
+  /* nằm trên div header_search cách top và right 0px*/
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  border: 0; /*mất viền button*/
+  background: url(images/toolbar_find.png) no-repeat;
+  cursor: pointer; /*rê chuột vào xuất hiện bàn tay*/
+}
+/* PHẦN MENU ============================*/
+#menu {
+  width: 1000px;
+  margin: 15px auto;
+  height: 42px;
+  /*border:1px solid #000000;*/
+  background: rgb(238, 75, 75);
+}
+#menu ul li {
+  float: left; /*các li nằm trên 1 hàng*/
+  border-right: 1px dotted #fff; /*Tạo đường ngăn cách giữa các li*/
+  height: 42px;
+}
+#menu ul {
+  list-style-type: none; /*tạo danh sách không dấu*/
+}
+#menu ul li a {
+  /*khoảng cách từ nội dung(chữ) đến lề trái & phải của mỗi li 25px*/
+  padding: 0 25px 0 25px;
+  color: #fff;
+  background: rgb(238, 75, 75);
+  font-weight: bold;
+  line-height: 42px; /*nội dung canh giữa chiều cao*/
+  display: inline-block; /*tạo khối ngang*/
+}
+#menu img {
+  float: left;
+  padding: 5px 10px 0 10px;
+}
+#menu ul li a:hover {
+  background: #999;
+  color: #00c;
+}
+/* PHẦN MAIN ============================*/
+#main {
+  width: 1000px;
+  margin: 15px auto;
+  height: 800px;
+  /*border:1px solid #000000;*/
+}
+#main_left {
+  width: 230px;
+  height: 750px;
+  float: left;
+  /*border:1px solid #000;*/
+}
+
+#menu_left {
+  width: 200px;
+  /*height:300px;*/
+  border: 1px solid #000;
+  margin: 10px 0 0 14px; /*cách trên 10, trái 14*/
+  border: 1px solid #cccccc;
+  border-radius: 6px; /*bo tròn góc 1 độ 6px*/
+}
+#menu_left ul {
+  list-style-type: none;
+}
+#menu_left > ul {
+  /* dấu ">" chỉ ảnh hưởng ul đầu tiên, k ảnh hưởng ul thứ 2*/
+  padding: 10px 20px 10px 20px;
+}
+#menu_left li {
+  line-height: 25px;
+}
+#menu_left > ul > li {
+  border-bottom: 1px solid #999;
+}
+.submenu li {
+  padding-left: 30px;
+}
+.submenu li {
+  padding-left: 30px;
+  background: url(images/arrow.png) no-repeat 15px 10px; /*tạo hình nền và k lặp lại*/
+}
+#menu_left a {
+  color: #00f; /*màu xanh*/
+}
+#menu_left a:hover {
+  color: #f1004c; /*màu đỏ*/
+  cursor: pointer; /*hình bàn tay*/
+}
+/* 6.2. MAIN RIGHT ==================================================*/
+ul {
+  list-style-type: none; /*bỏ dấu chấm tròn đầu danh sách icon*/
+}
+a {
+  /*tất cả gạch dưới của thẻ a đều được bỏ đi trong web này*/
+  text-decoration: none;
+}
+#main_right {
+  width: 749px;
+  /*height:750px;*/
+  float: left;
+  /*border:1px solid #000;*/
+  border-left: 1px dotted #333;
+  margin-left: 20px;
+}
+#products {
+  margin-left: 17px; /*div products cách div main-right 17px*/
+}
+#products ul li {
+  width: 230px;
+  height: 340px;
+  /*border:1px solid #000;*/
+  float: left;
+  margin-right: 7px;
+}
+.content {
+  width: 210px;
+  height: 320px;
+  /*border:1px solid #000;*/
+  margin: 9px 10px 9px 10px;
+}
+.title {
+  margin-top: 6px;
+  text-align: center;
+  color: #f09;
+}
+.price {
+  margin-top: 3px;
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
+}
+#products ul li:hover {
+  background: #ccc;
+  box-shadow: 0 0 5px #2c2c30; /*đổ bóng*/
+}
