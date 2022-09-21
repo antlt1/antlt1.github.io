@@ -18,11 +18,12 @@
     <div class="header">
         <div class="nav">
             <div class="nav-content">
-                <li class="col-lg-2 col-sm-2"><a href="" class="p-3 nav-link text-dark active ">Home</a></li>
-                <li class="col-lg-2 col-sm-2"><a href="" class="p-3 nav-link text-dark">About</a></li>
+                <li class="col-lg-2 col-sm-2"><a href="/" class="p-3 nav-link text-dark active ">Home</a></li>
+                <li class="col-lg-2 col-sm-2"><a href="#aubout" class="p-3 nav-link text-dark"
+                        onclick="slideto('card_about')">About</a></li>
                 <li class="col-lg-2 col-sm-2"><a href="" class="p-3 nav-link text-dark">Download CV</a></li>
-                <li class="col-lg-2 col-sm-2"><a href="" class="p-3 nav-link text-dark">Skill</a></li>
-                <li class="col-lg-2 col-sm-2"><a href="" class="p-3 nav-link text-dark">Contact</a></li>
+                <li class="col-lg-2 col-sm-2"><a href="#skill" class="p-3 nav-link text-dark">Skill</a></li>
+                <li class="col-lg-2 col-sm-2"><a href="#contact" class="p-3 nav-link text-dark">Contact</a></li>
             </div>
         </div>
     </div>
@@ -33,16 +34,41 @@
         <h1>NGUYEN VAN AN</h1>
         <p>I'm Back-end Developer</p>
         <!--  <button class="btn btn-outline-secondary">About me</button> -->
-    </div>
+    </div><br><br><br>
     <div class="content">
-        <div class="card">
-            <h3>This is title</h3>
-            <div>
-                <p>This is value when you writer content!</p>
-                <p>This is value when you writer content!</p>
-                <p>This is value when you writer content!</p>
-                <p>This is value when you writer content!</p>
-                <p>This is value when you writer content!</p>
+        <div class="card card-about" id="card_about">
+            <h3 name="about">ABOUT</h3>
+            <p>With a big interest in Software Development and Web Devlopment, I have taken 3 projects during University
+                and had hands-on experience in Web Development. In the next three years, I want to be a Senior Fullstack
+                Software Engineer.</p>
+            <div class="more-about">
+                <div class="mypic"></div>
+                <div class="content-card">
+                    <ul>
+                        <li>
+                            Full Name: Nguyen Van An
+                        </li>
+                        <li>
+                            Birthday: Feb 01 2000
+                        </li>
+                        <li>
+                            Phone: (+84) 393 404 414
+                        </li>
+                        <li class="my-age">
+                            Age: none
+                        </li>
+                       
+                    </ul>
+                    <ul>
+                        <li>
+                            Email: Antlt1108@gmail.com
+                        </li>
+                        <li>
+                            Degree: Low Lever Dev
+                        </li>
+                        Country: 243, Chau Thanh A, Hau Giang
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="card">
@@ -87,8 +113,15 @@
         </div>
     </div>
 
-<!-- script -->
-<script src="/source/js/index.js"></script>
+    <!-- script -->
+    <script src="/source/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        // get my age
+        const yearnow = new Date().getFullYear() - 2000;
+        $('.my-age').text('Age: ' + yearnow)
+
+    </script>
 </body>
 
 </html>

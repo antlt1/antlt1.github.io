@@ -1,5 +1,5 @@
 *{
-    
+    font-size: large;
 }
 body{
     
@@ -15,12 +15,11 @@ li{
 /* background index */
 .header{
     width: 100%;
-    height: 300px;
     position: fixed;
     z-index: 999;
 }
 .background {
-    height: 300px;
+    height: 500px;
     background-image: url('../image/background/background_the_city.jpg');
     background-size: cover;
     background-position: bottom;
@@ -28,7 +27,7 @@ li{
 
 }
 .header .nav{
-    border-bottom: white 0.5px solid;
+    border-bottom: rgba(213, 204, 204, 0.458) 0.5px solid;
     transition: scroll 2s;
 }
 .header .nav .nav-content{
@@ -49,7 +48,46 @@ li{
     align-items: center;
     position: relative;
     margin-top: -200px;
+    margin-bottom: 100px;
 }
 .startup button{
     width: max-content;
+}
+.content{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.content .card{
+    display: inline-flex;
+}
+.content .card h3{
+    text-align: center;
+}
+.content .mypic{
+    background-color: aquamarine;
+    width: 30%;
+    height: 50vh;
+}
+.content p{
+    margin: 0 5% 0 5%;
+}
+.content .more-about{
+    margin : 1% 5% 5% 5%;
+    display: flex;
+    flex-direction: row;
+}
+.content .content-card{
+    display: flex;
+    width: 100%;
+}
+.content .content-card ul{
+    margin: 2%;
+    width: 100%;
+}
+.content .content-card ul li{
+    list-style: circle !important;
+    margin: 5%;
 }
