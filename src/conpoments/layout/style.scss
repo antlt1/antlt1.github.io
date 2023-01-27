@@ -1,0 +1,73 @@
+.fixedHeader{
+    position: fixed;
+    width: 100%;
+}
+.navHeader{
+    margin: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    li{
+        list-style: none;
+    }
+    .tabMenu{
+        display: inline-block;
+        position: relative;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .tabMenu:hover .subMenu{
+        display: block;
+    }
+}
+.conpoments{
+        // margin:20px ;
+        // background-color: yellow;
+        display: flex;
+        div{
+            
+        }
+        .category{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .in4{
+                padding: 5px;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: center;
+                .myjob{
+                    color: #d5c455;
+                }
+                
+                    li{
+                        .name{
+                            font-size: 40px;
+                        }
+                    }
+                
+            }
+        }
+        .content{
+            background-color: #ffc107;
+            width: 100%;
+            height: 100vh;
+            .value{
+                margin: 10px;
+                height: 80vh;
+                overflow-y: auto;
+                overflow: auto;
+                overflow: -moz-scrollbars-none;
+                -ms-overflow-style: none;
+            }
+            .value::-webkit-scrollbar { 
+                width: 0 !important;
+                display: none; 
+              }
+        }
+    }
