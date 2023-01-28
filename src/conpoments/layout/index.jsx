@@ -7,6 +7,7 @@ import myValue from "../router";
 import Contact from "../values/contact";
 
 export default function Layout() {
+  
   return (
     <>
       <Header />
@@ -21,7 +22,7 @@ export default function Layout() {
                 I'm <br />
                 Nguyen Van An
               </h2>
-              <p>Code đang trong quá trình hoàn thành thời gian comnit: 27/02/2023</p>
+              {/* <p>Code đang trong quá trình hoàn thành thời gian comnit: 27/02/2023</p> */}
               <div className="btn">
                 <a target="_blank" href="https://github.com/antlt1">
                   More about me →
@@ -45,6 +46,15 @@ export default function Layout() {
           </div>
         </div>
       </div>
+      <div id="myModal" class="modal__">
+
+  {/* <!-- Modal content --> */}
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
     </>
   );
 }

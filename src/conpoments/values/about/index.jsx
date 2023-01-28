@@ -2,6 +2,7 @@ import React from "react";
 import "./style.scss";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { ContactMail, Facebook, House, Instagram, LocalPhone, YouTube } from "@mui/icons-material";
+import file from '../../../file';
 
 export default function About() {
   return (
@@ -11,11 +12,11 @@ export default function About() {
           <h2>My About</h2>
 
           <div className="my__piture">
-            <img
-              src=""
+            {/* <img
+              src={file.my_avt}
               title=""
               alt="this pic profile when i upload to sever"
-            />
+            /> */}
             <div className="content__mypicture">
               <p className="name">NGUYỄN VĂN AN</p>
               <p>

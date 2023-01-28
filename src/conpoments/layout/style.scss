@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
     li{
         list-style: none;
     }
@@ -20,6 +21,10 @@
         align-content: center;
         flex-direction: column;
         justify-content: center;
+        align-items: flex-end
+    }
+    .subMenu{
+        display: block;
     }
     .tabMenu:hover .subMenu{
         display: block;
