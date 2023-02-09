@@ -3,7 +3,7 @@ import Header from "./header";
 import Footer from "./footer";
 import "./style.scss";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import myValue from "../router";
+import { myValue } from "../router";
 import Contact from "../values/contact";
 
 export default function Layout() {
@@ -39,7 +39,7 @@ export default function Layout() {
             {myValue.map((page, number) => {
               const Page = page.value;
               if (page.name != null) {
-                return <Page />;
+                return <Page key={number} />;
               }
               console.log(page.name);
             })}

@@ -25,10 +25,15 @@
     }
     .subMenu{
         display: block;
+        display: flex;
+        flex-direction: row;
+        li{
+            margin: 8px;
+        }
     }
-    .tabMenu:hover .subMenu{
-        display: block;
-    }
+    // .tabMenu:hover .subMenu{
+    //     display: block;
+    // }
 }
 .conpoments{
         // margin:20px ;

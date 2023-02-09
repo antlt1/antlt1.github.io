@@ -1,5 +1,7 @@
 import React from 'react'
 import DensityMediumIcon from '@mui/icons-material/DensityMedium';
+import file from '../../file';
+import { Link } from 'react-router-dom';
 export default function Header() {
   
   function ondiss(){
@@ -28,14 +30,13 @@ export default function Header() {
               <DensityMediumIcon/>
             </a> */}
             <div className='subMenu'>
-              <ul>
                 <li>
-                  {/* <a href="#" onClick={ondiss}>Thuê Code</a> */}
+                  <a href={file.my_cv} key='cc' >Download MyCV</a>
                 </li>
-                <li>
-                  {/* .... */}
+                <li>|</li>
+                <li>                
+                  <Link to='/thuecode'>ThueCode</Link>
                 </li>
-              </ul>
             </div>
           </li>
         </div>

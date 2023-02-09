@@ -1,21 +1,25 @@
 import logo from './logo.svg';
 import './App.scss';
 import Layout from './conpoments/layout';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ThueCode from './thuecode';
+import { valAdmin } from './conpoments/router';
 
 function App() {
-  if (document.addEventListener) {
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    }, false);
-  } else {
-    document.attachEvent('oncontextmenu', function() {
-      window.event.returnValue = false;
-    });
-  }
-  
   return (
     <div className="App">
-      <Layout />
+    <BrowserRouter>
+      <Routes>
+        {/* custom tay */}
+        <Route path='/' element={<Layout />}/>
+        <Route path='/thuecode' element={<ThueCode />}/>
+        {/* custom map */}
+        {valAdmin.map((val,i)=>{
+          return(<Route path={val.root} element={<val.value/>} key={i}/>)
+          
+        })}
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
