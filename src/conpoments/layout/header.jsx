@@ -25,7 +25,7 @@ export default function Header() {
           <li>
               
           </li>
-          <li className='tabMenu'>
+          <div className='tabMenu'>
             {/* <a href="#">
               <DensityMediumIcon/>
             </a> */}
@@ -38,7 +38,7 @@ export default function Header() {
                   <Link to='/thuecode'>ThueCode</Link>
                 </li>
             </div>
-          </li>
+          </div>
         </div>
       </div>
     </>

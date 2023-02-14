@@ -16,7 +16,7 @@ export default function Layout() {
           <br />
           <br />
           <div className="in4">
-            <li>
+            <div>
               <h3 className="myjob">BACK-END WEB DEVELOPER & SOFTDEVELOPR</h3>
               <h2 className="name">
                 I'm <br />
@@ -28,7 +28,7 @@ export default function Layout() {
                   More about me →
                 </a>
               </div>
-            </li>
+            </div>
           </div>
           <Footer />
         </div>
@@ -46,11 +46,11 @@ export default function Layout() {
           </div>
         </div>
       </div>
-      <div id="myModal" class="modal__">
+      <div id="myModal" className="modal__">
 
   {/* <!-- Modal content --> */}
-  <div class="modal-content">
-    <span class="close">&times;</span>
+  <div className="modal-content">
+    <span className="close">&times;</span>
     <p>Some text in the Modal..</p>
   </div>
 

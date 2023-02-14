@@ -1,8 +1,9 @@
-import logo from './logo.svg';
 import './App.scss';
 import Layout from './conpoments/layout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ThueCode from './thuecode';
+//booostrap
+// @import "~bootstrap/scss/bootstrap";
 import { valAdmin } from './conpoments/router';
 
 function App() {

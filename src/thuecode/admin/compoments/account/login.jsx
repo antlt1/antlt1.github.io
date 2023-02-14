@@ -1,12 +1,33 @@
 import React, { useState } from "react";
 import "./style.scss";
+import dataBases from "~/firebase";
+import { child, get, getDatabase, ref } from 'firebase/database';
+import { useCookies } from 'react-cookie';
 
 export default function Login() {
+
+  //userState
     const [username,setusername] = useState("");
     const [password,setpassword] = useState("");
+  //cookie
 
+    const [idcookie, setidcookie ] = useCookies(['']);
+    
     function login(){
-        
+        const refs = ref(dataBases);
+        get(child(refs,'account/userID')).then((value)=>{
+          Object.keys(value.val()).map((key)=>{
+            // console.log(key);
+            if(key === username ){
+              if(value.val()[key].password === password){
+                  setidcookie('lg',key,'/',(10 * 365 * 24 * 60 * 60));
+                  window.location.reload();
+              }else{
+                console.log('Sai tài khoản mật khẩu!!!');
+              }
+            }
+          })
+        })
     }
   return (
     <>
@@ -22,7 +43,11 @@ export default function Login() {
                 setusername(e.target.value)
             }}   />
             <br />
-            <input type="password" name="password" className="password" placeholder="Mật Khẩu" />
+            <input type="password" name="password" className="password"
+              onChange={(e)=>{
+                setpassword(e.target.value)
+              }}
+            placeholder="Mật Khẩu" />
             <br />
             <input type="button" value="Đăng nhập" onClick={login} />
           </div>

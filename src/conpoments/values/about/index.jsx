@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { ContactMail, Facebook, House, Instagram, LocalPhone, YouTube } from "@mui/icons-material";
-import file from '../../../file';
+import file from '~/file';
 
 export default function About() {
   return (

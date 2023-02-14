@@ -8,9 +8,9 @@ export default function MySkill() {
         <h2>
           <b>My Project</b>
         </h2>
-        <div class="timeline">
-          <div class="container left">
-            <div class="content">
+        <div className="timeline">
+          <div className="container left">
+            <div className="content">
               <h2>Base 1 - 03/2021 - 05/2021</h2>
               <p>
                 Website News <br />
@@ -24,8 +24,8 @@ export default function MySkill() {
               </p>
             </div>
           </div>
-          <div class="container right">
-            <div class="content">
+          <div className="container right">
+            <div className="content">
               <h2>Base 2 - 09/2021 - 01/2022</h2>
               <p>
                 Application Lirary <br />
@@ -40,8 +40,8 @@ every time you go to the library to read or borrow when in life
               </p>
             </div>
           </div>
-          <div class="container left">
-            <div class="content">
+          <div className="container left">
+            <div className="content">
               <h2>Internship project - 05/2022 - 06/2022</h2>
               <p>
                 Website & Application Quản lý thư viện tư nhân <br /> 
@@ -57,8 +57,8 @@ every time you go to the library to read or borrow when in life
               </p>
             </div>
           </div>
-          <div class="container right">
-            <div class="content">
+          <div className="container right">
+            <div className="content">
               <h2>2022 - NOW</h2>
               <p>This code for Guest and project privated.</p>
             </div>
