@@ -1,0 +1,12 @@
+.container{
+    margin: 50px;
+    display: flex;
+    flex-direction: column; 
+    .box-control-md{
+        display: flex;
+        .box-tw{
+            width: 50%;
+            
+        }
+    }
+}
