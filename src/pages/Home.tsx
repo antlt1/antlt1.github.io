@@ -1,13 +1,9 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../app/store';
 import bg from '~/assets/IMG/wallpaper-win11-default.jpg'
 import { Link } from 'react-router-dom';
+import Logo from '~/assets/IMG/logo.png'
 
 const Home: React.FC = () => {
-  const dispatch = useDispatch();
-  const counter = useSelector((state: RootState) => state.counter.value);
-
   return (
     <div
       className="flex min-h-screen bg-cover backdrop-blur-sm justify-center items-center relative"
@@ -19,9 +15,9 @@ const Home: React.FC = () => {
           {/* header */}
           <div className="w-full px-6 py-4 flex items-center">
             {/* <!-- Logo --> */}
-            <div className="w-1/2">
-              <h1 className="text-2xl font-bold text-blue-600">MyLogo</h1>
-            </div>
+              <img className="w-24 h-24 object-contain" src={Logo} alt="" />
+            {/* <div className="w-1/2">
+            </div> */}
 
             {/* <!-- Navigation --> */}
             <div className="flex-1 flex justify-end items-center space-x-6">

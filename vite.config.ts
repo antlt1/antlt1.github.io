@@ -4,6 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  build:{
+    outDir: 'dist', // Thư mục đầu ra
+  },
+  base: '/',
   //setting port to 3000
   server: {
     port: 3000,
