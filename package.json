@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "npm run build && gh-pages -d dist && rimraf dist"
+    "deploy": "npm run build && gh-pages -d dist -r https://github.com/antlt1/antlt1.github.io.git"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",
