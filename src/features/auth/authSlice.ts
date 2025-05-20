@@ -5,6 +5,7 @@ export interface AuthState {
   password: string | null;
   sdt: string | null; // Số điện thoại
   email: string | null;
+  role: string | null;
 }
 
 const initialState: AuthState = {
@@ -12,6 +13,7 @@ const initialState: AuthState = {
   password: null,
   sdt: null,
   email: null,
+  role: null,
 };
 
 const authSlice = createSlice({
@@ -24,6 +26,7 @@ const authSlice = createSlice({
       state.password = action.payload.password;
       state.sdt = action.payload.sdt;
       state.email = action.payload.email;
+      state.role = action.payload.role;
     },
     // Xóa thông tin người dùng
     clearAuth(state) {
@@ -31,6 +34,7 @@ const authSlice = createSlice({
       state.password = null;
       state.sdt = null;
       state.email = null;
+      state.role = null;
     },
   },
 });

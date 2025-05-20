@@ -1,35 +1,72 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from '~/pages/Home';
-import About from '~/pages/About';
-import RouterMD from './RouterMD';
-import Header from '~/components/layout/header'; // Đường dẫn đến Header component
-import Readme from '~/pages/Readme/Readme';
-import RouterAdmin from './RouterAdmin';
-import LayoutAdmin from '~/components/Admin/Dashboard/LayoutAdmin';
+import React, { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import About from "~/pages/About";
+import RouterMD from "./RouterMD";
+import RouterHome from "./RouterHome";
+import Readme from "~/pages/Readme/Readme";
+import RouterAdmin from "./RouterAdmin";
+import LayoutAdmin from "~/components/Admin/Dashboard/LayoutAdmin";
+import HomeDefault from "~/pages/HomeDefault";
+import { useSelector } from "react-redux";
+import NotFound from "~/pages/404";
+import AuthProvider from "~/components/Auth/AuthProvider";
+
+// Wrapper component để xử lý logic auth
+const AuthCheck: React.FC = () => {
+  const auth = useSelector((state: any) => state.auth);
+  const location = useLocation();
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+
+  useEffect(() => {
+    console.log("Auth state:", auth);
+    // Kiểm tra nếu có email hoặc username thì coi như đã đăng nhập
+    if ((auth.email || auth.username) && location.pathname === "/login") {
+      setShouldRedirect(true);
+    }
+  }, [auth, location.pathname]);
+
+  if (shouldRedirect) {
+    // Chuyển về trang chủ thay vì 404
+    window.location.href = "/";
+    return null;
+  }
+
+  return (
+    <Routes>
+      <Route path="/404" element={<NotFound />} />
+      <Route path="/*" element={<HomeDefault children={<RouterHome />} />} />
+      <Route
+        path="/md/*"
+        element={
+          <>
+            <Readme children={<RouterMD />} />
+          </>
+        }
+      />
+      {/* check nếu auth role ko phải amdin ko hiện router Admin luôn */}
+      {auth.role === "admin" && (
+        <Route
+          path="/admin/*"
+          element={<LayoutAdmin children={<RouterAdmin />} />}
+        />
+      )}
+      {/* route admin */}
+    </Routes>
+  );
+};
 
 const AppRoutes: React.FC = () => {
   return (
     <Router>
-      <Routes>
-        {/* trang show Readme của các code đang dùng 'trong thẻ <router path sẽ có path="/rm/* để dẫn các component con đi vào root cho thuận tiện */}
-        <Route path="/" element={<Home />} />
-        <Route path="/md/*" element={
-          <>
-            <Header />   {/* // Header component sẽ được hiển thị trên tất cả các trang con của RouterMD */}
-            <Readme children={
-              <RouterMD /> // Readme component sẽ được hiển thị trên tất cả các trang con của RouterMD
-            } /> {/* // Readme component sẽ được hiển thị trên tất cả các trang con của RouterMD */}
-          </>
-        } />
-
-        {/* route admin */}
-        <Route path="/admin/*" element={
-          <LayoutAdmin children={
-            <RouterAdmin /> // RouterAdmin component sẽ được hiển thị trên tất cả các trang con của RouterAdmin
-          } />
-        } />
-      </Routes>
+      <AuthProvider>
+        <AuthCheck />
+      </AuthProvider>
     </Router>
   );
 };

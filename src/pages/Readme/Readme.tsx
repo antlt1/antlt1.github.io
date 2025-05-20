@@ -84,7 +84,7 @@ const Readme: React.FC<ReadmePop> = ({
       <aside className={cx("w-64", "bg-gray-800", "shadow-md", "tab-left")}>
         <div className={cx("p-4")}>
           <div className={cx("text-blue-400", "font-bold", "text-lg")}>
-            ReadMe Step Code
+            <Link to={'/'}>Back to Home</Link>
           </div>
         </div>
         {/* tailwind hr */}
