@@ -6,6 +6,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   build:{
     outDir: 'dist', // Thư mục đầu ra
+    emptyOutDir: true,
+    chunkSizeWarningLimit: 1000, // Đổi từ 500KB lên 1000KB
   },
   base: '/',
   //setting port to 3000
