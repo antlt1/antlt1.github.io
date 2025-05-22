@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { db, auth } from "~/firebase/firebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore/lite";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setAuth } from "~/features/auth/authSlice";

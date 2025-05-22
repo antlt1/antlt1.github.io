@@ -3,10 +3,8 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
   useLocation,
 } from "react-router-dom";
-import About from "~/pages/About";
 import RouterMD from "./RouterMD";
 import RouterHome from "./RouterHome";
 import Readme from "~/pages/Readme/Readme";

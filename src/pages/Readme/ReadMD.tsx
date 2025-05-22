@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 import { db } from '~/firebase/firebaseConfig';
 import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
-import remarkGfm from 'remark-gfm';
-import ReactMarkdown from 'react-markdown';
 import MDEditor from '@uiw/react-md-editor';
 
 const cx = classNames.bind(styles);
