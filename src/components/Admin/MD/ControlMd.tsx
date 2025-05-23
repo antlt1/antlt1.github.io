@@ -14,7 +14,6 @@ const ControlMd: React.FC = () => {
   return (
     <div className={cx('container', 'space-y-12')}>
       <div className="btn" style={{ display: 'flex', justifyContent: 'flex-end', flexDirection: 'row-reverse', margin: "0" }}>
-        <Button toLink='/admin/md/add' nameButton='Tạo mới' />
         <ToastContainer />
       </div>
       {/* Các chức năng quản lý khác có thể thêm ở đây */}

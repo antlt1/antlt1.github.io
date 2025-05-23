@@ -23,6 +23,29 @@ const OFFLINE_MARKDOWN_TYPES = ['NodeJS', 'ReactJs', 'C#', 'CSDL', 'Python', 'Ja
 const AdminEditFileMD: React.FC = () => {
   const { id } = useParams(); // Extract id from the router path
 
+  // Add cleanup effect
+  const dispatch = useDispatch();
+  useEffect(() => {
+    return () => {
+      // Reset form data when leaving the page
+      setFormData({
+        idMarkDown: '',
+        nameMarkDown: '',
+        valueMarkDown: '',
+        typeMarkDown: '',
+      });
+      // Reset Redux state
+      dispatch(
+        setMarkDown({
+          typeMarkDown: null,
+          idMarkDown: null,
+          nameMarkDown: null,
+          valueMark: null,
+        })
+      );
+    };
+  }, [dispatch]);
+
   useEffect(() => {
     console.log(`id của page: ${id}`);
 
@@ -63,7 +86,6 @@ const AdminEditFileMD: React.FC = () => {
     valueMarkDown: "",
     typeMarkDown: "", // Initialize typeMarkDown
   });
-  const dispatch = useDispatch();
   // Use the offline array for types
   const [typeMarkDown, setTypeMarkDown] = useState<string[]>(OFFLINE_MARKDOWN_TYPES);
   // Initialize selectType with the first item from the offline array, or an empty string if the array is empty

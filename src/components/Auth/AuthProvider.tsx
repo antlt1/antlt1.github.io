@@ -9,20 +9,20 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("Bắt đầu lắng nghe auth state changes...");
+    // console.log("Bắt đầu lắng nghe auth state changes...");
 
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      console.log("Auth state changed. Current user:", user);
+      // console.log("Auth state changed. Current user:", user);
 
       if (user) {
-        console.log("Người dùng đã đăng nhập. UID:", user.uid);
+        // console.log("Người dùng đã đăng nhập. UID:", user.uid);
         try {
           const userDocRef = doc(db, "users", user.uid);
           const userDocSnap = await getDoc(userDocRef);
           
           if (userDocSnap.exists()) {
             const userData = userDocSnap.data();
-            console.log("Dữ liệu user từ Firestore:", userData);
+            // console.log("Dữ liệu user từ Firestore:", userData);
             
             dispatch(setAuth({
               username: userData.username,
@@ -32,13 +32,13 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
               sdt: null
             }));
           } else {
-            console.warn("Không tìm thấy document user trong Firestore");
+            // console.warn("Không tìm thấy document user trong Firestore");
           }
         } catch (error) {
-          console.error("Lỗi khi lấy dữ liệu user:", error);
+          // console.error("Lỗi khi lấy dữ liệu user:", error);
         }
       } else {
-        console.log("Không có user đăng nhập");
+        // console.log("Không có user đăng nhập");
         // Reset auth state khi logout
         dispatch(setAuth({
           username: null,
@@ -51,7 +51,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     });
 
     return () => {
-      console.log("Dọn dẹp auth listener");
+      // console.log("Dọn dẹp auth listener");
       unsubscribe();
     };
   }, [dispatch]);

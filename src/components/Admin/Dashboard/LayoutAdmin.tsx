@@ -1,8 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LeftBar from './LeftBar';
 
 const navigation = [
-  { name: 'Quản lý Readme', href: '/admin/md', current: true },
+  { 
+    name: 'File Mark Down', 
+    href: '/admin/md', 
+    group: true,
+    item: [
+      {
+        name: 'Quản lý Mark Down',
+        href: '/admin/md',
+        current: false
+      },
+      {
+        name: 'Thêm Mark Down',
+        href: '/admin/md/add',
+        current: false
+      }
+    ]
+
+  },
   { name: 'Quản lý Account', href: '/admin/account', current: false },
   { name: 'Projects', href: '/admin/projects', current: false },
   { name: 'Calendar', href: '/admin/calendar', current: false },
@@ -20,26 +38,12 @@ const LayoutAdmin: React.FC<LayoutAdminPop> = ({ children }) => {
       <div className="hidden lg:block w-48 xl:w-72 flex-shrink-0 border-r border-gray-800 h-full overflow-y-auto p-5">
         {/* Logo */}
         <div className="h-16 flex items-center justify-center">
-          <h1 className="text-2xl font-bold text-blue-400">Dashboard</h1>
+          <p className="text-2xl font-bold text-blue-400">Dashboard</p>
         </div>
         {/* Divider */}
         <div className="h-1 bg-gray-800 w-full mt-2"></div>
         {/* Navigation */}
-        <div className="mt-4 flex flex-col space-y-4">
-          {navigation.map((item) => (
-            <Link
-              to={item.href}
-              key={item.name}
-              className={`flex items-center h-10 px-3 rounded-md text-sm font-medium transition-colors duration-200 ${
-                item.current
-                  ? 'bg-gray-800 text-blue-300'
-                  : 'text-gray-400 hover:bg-gray-800 hover:text-white'
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
+        <LeftBar ListElement={navigation} />
       </div>
       {/* Main Content */}
       <div className="flex-grow flex flex-col h-full overflow-hidden">

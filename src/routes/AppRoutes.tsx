@@ -14,6 +14,7 @@ import HomeDefault from "~/pages/HomeDefault";
 import { useSelector } from "react-redux";
 import NotFound from "~/pages/404";
 import AuthProvider from "~/components/Auth/AuthProvider";
+import Review from '~/components/Admin/Review/Review';
 
 // Wrapper component để xử lý logic auth
 const AuthCheck: React.FC = () => {
@@ -22,7 +23,7 @@ const AuthCheck: React.FC = () => {
   const [shouldRedirect, setShouldRedirect] = useState(false);
 
   useEffect(() => {
-    console.log("Auth state:", auth);
+    // console.log("Auth state:", auth);
     // Kiểm tra nếu có email hoặc username thì coi như đã đăng nhập
     if ((auth.email || auth.username) && location.pathname === "/login") {
       setShouldRedirect(true);
@@ -38,6 +39,9 @@ const AuthCheck: React.FC = () => {
   return (
     <Routes>
       <Route path="/404" element={<NotFound />} />
+      {/* test code xem review code */}
+      <Route path="/review" element={<Review />} /> {/* Add Review route */}
+      {/*  */}
       <Route path="/*" element={<HomeDefault children={<RouterHome />} />} />
       <Route
         path="/md/*"

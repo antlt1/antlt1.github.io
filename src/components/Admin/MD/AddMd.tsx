@@ -33,6 +33,27 @@ const AdminAddFileMD: React.FC = () => {
     }
   }, []);
 
+  // Cleanup function when component unmounts
+  useEffect(() => {
+    return () => {
+      // Reset form data when leaving the page
+      setFormData({
+        nameMarkDown: '',
+        valueMarkDown: '',
+        typeMarkDown: '',
+      });
+      // Reset Redux state
+      dispatch(
+        setMarkDown({
+          typeMarkDown: null,
+          idMarkDown: null,
+          nameMarkDown: null,
+          valueMark: null,
+        })
+      );
+    };
+  }, [dispatch]);
+
   const handleTypeChange = (newlySelectedType: string) => {
     setSelectType(newlySelectedType);
     const updatedFormData = { ...formData, typeMarkDown: newlySelectedType };

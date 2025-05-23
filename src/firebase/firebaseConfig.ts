@@ -19,8 +19,8 @@ export const auth = getAuth(app);
 // Preserve authentication state
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log("User is logged in:", user);
+    // console.log("User is logged in:", user);
   } else {
-    console.log("User is logged out");
+    // console.log("User is logged out");
   }
 });

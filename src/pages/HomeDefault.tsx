@@ -11,17 +11,14 @@ interface HomeDefaultPops {
 
 const HomeDefault: React.FC<HomeDefaultPops> = ({ children }) => {
   const auth = useSelector((state: any) => state.auth);
-  console.log('Auth state:', auth);
+  // console.log('Auth state:', auth);
  
   return (
     <div
-      className="flex min-h-screen bg-cover backdrop-blur-sm justify-center items-center relative"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
+      className="flex min-h-screen bg-cover backdrop-blur-sm justify-center items-center relative" >
       <div
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-        backdrop-blur-sm bg-white/90 text-black flex flex-col w-[95%] h-[95%] rounded-md"
-      >
+        backdrop-blur-sm bg-white/90 text-black flex flex-col w-[95%] h-[95%] rounded-md" >
         <div className="flex-[1] flex items-center justify-center">
           <div className="w-full px-6 py-4 flex items-center">
             <img className="w-24 h-24 object-contain" src={Logo} alt="" />
