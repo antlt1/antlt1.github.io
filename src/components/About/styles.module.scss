@@ -1,0 +1,67 @@
+.item-3{
+
+}
+
+.avatar-card {
+  background: #f46c45;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+  padding: 3.5rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 270px;
+}
+.avatar-img {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid #fff;
+  background: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
+  z-index: 2;
+}
+.avatar-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar-content {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar-content h1 {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.avatar-content p {
+  color: #fff;
+  opacity: 0.85;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.avatar-social {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.avatar-social a {
+  display: flex;
+  align-items: center;
+  transition: transform 0.15s;
+}
+.avatar-social a:hover {
+  transform: scale(1.15);
+}

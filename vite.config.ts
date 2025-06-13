@@ -1,35 +1,22 @@
-import { defineConfig } from "vite";
-import path from "path";
-import tailwindcss from "@tailwindcss/vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  build:{
-    outDir: 'dist', // Thư mục đầu ra
-    emptyOutDir: true,
-    chunkSizeWarningLimit: 1000, // Đổi từ 500KB lên 1000KB
-  },
-  base: '/',
-  //setting port to 3000
-  server: {
-    port: 3000,
-    hmr: true, // Enable Hot Module Replacement
-  },
-  //setting base to /
-  plugins: [react(), tailwindcss()],
+  plugins: [react(),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
-      "~": path.resolve(__dirname, "src"),
+      '~': path.resolve(__dirname, 'src'),
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        // Remove any Tailwind-related imports
-      },
-    },
+  server: {
+    port: 80,
+    host: true,
   },
-  define: {
-    "process.env": {}, // Ensure Firebase works with Vite
+  build: {
+    outDir: 'dist',
   },
 });

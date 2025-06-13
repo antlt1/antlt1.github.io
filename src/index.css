@@ -1,0 +1,12 @@
+@import "tailwindcss";
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    /* https://grabient.com/HQVgzAHANKDsCcMQAYCMUC0rhldHs6GywATMvqvLDKajTgGxhSnCMQvKvDLwAsMXCCFoo2fqRFZQ8CEA/ */
+    background: linear-gradient(225deg, rgba(130, 205, 224, 1.000) 0.000%, rgba(149, 201, 222, 1.000) 16.667%, rgba(174, 200, 216, 1.000) 33.333%, rgba(202, 201, 208, 1.000) 50.000%, rgba(232, 206, 199, 1.000) 66.667%, rgba(255, 213, 194, 1.000) 83.333%, rgba(255, 221, 192, 1.000) 100.000%)
+}

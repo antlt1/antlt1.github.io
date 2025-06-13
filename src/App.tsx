@@ -1,12 +1,13 @@
 import React from 'react';
-import AppRoutes from './routes/AppRoutes';
+import RouterWeb from '~/components/routers/Router';
 
-const App: React.FC = () => {
+function App() {
+
   return (
-    <div>
-      <AppRoutes />
+    <div className='m-[1%] text-gray-500'>
+      <RouterWeb />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
